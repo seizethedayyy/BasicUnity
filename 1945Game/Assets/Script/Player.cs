@@ -29,6 +29,13 @@ public class Player : MonoBehaviour
         else
             ani.SetBool("right", false);
 
-        transform.Translate(moveX, moveY, 0);
+        if (Input.GetAxis("Vertical") >= 0.5f)
+        {
+            ani.SetBool("up", true);
+        }
+        else
+            ani.SetBool("up", false);
+
+            transform.Translate(moveX, moveY, 0);
     }
 }
