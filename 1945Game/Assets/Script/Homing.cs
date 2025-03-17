@@ -24,9 +24,10 @@ public class Homing : MonoBehaviour
     void Update()
     {
 
-        //transform.Translate(dirNo * Speed * Time.deltaTime);
+        transform.Translate(dirNo * Speed * Time.deltaTime);
 
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Speed * Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position
+        //    , target.transform.position, Speed * Time.deltaTime);
 
 
     }
@@ -44,6 +45,9 @@ public class Homing : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+
+
 
 
 }

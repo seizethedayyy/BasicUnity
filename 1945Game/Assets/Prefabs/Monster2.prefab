@@ -135,11 +135,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d9008c25ec7a2440915ce9fd906da55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 150
   Speed: 3
   Delay: 1
   ms1: {fileID: 5217159743791916724}
   ms2: {fileID: 2385038460592952198}
   bullet: {fileID: 2339413319464366991, guid: 1a5c48e0906bc05449514edd6cfa62cf, type: 3}
+  Item: {fileID: 4810209441127397289, guid: 5fd30cce7b6be1c40ac0f709df965468, type: 3}
 --- !u!50 &-7723788289796643901
 Rigidbody2D:
   serializedVersion: 5
