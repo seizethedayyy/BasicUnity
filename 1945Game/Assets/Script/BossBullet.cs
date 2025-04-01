@@ -25,11 +25,7 @@ public class BossBullet : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //미사일지움
             Destroy(gameObject);
         }
     }
-
-
-
 }

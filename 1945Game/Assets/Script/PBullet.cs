@@ -16,40 +16,44 @@ public class PBullet : MonoBehaviour
     }
 
 
-    //화면 밖으로 나갈경우
+    //화면밖으로 나갈경우
     private void OnBecameInvisible()
     {
         //자기 자신 지우기
         Destroy(gameObject);
+
     }
 
 
-    //충돌 처리
+    //충돌처리
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Monster"))
         {
 
-            //이펙트 생성
+
+
+
+            //이펙트생성
             GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
-            //1초 뒤에 지우기
+            //1초뒤에 지우기
             Destroy(go, 1);
 
-            //몬스터 삭제
-            //collision.gameObject.GetComponent<Monster>().Damage(Attack);
-            PoolManager.Instance.Return(collision.gameObject);
-
+            //몬스터삭제
+            collision.gameObject.GetComponent<Monster>().Damage(Attack);
+            //PoolManager.Instance.Return(collision.gameObject);
             //미사일 삭제
             Destroy(gameObject);
 
         }
 
+
         if (collision.CompareTag("Boss"))
         {
 
-            //이펙트 생성
+            //이펙트생성
             GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
-            //1초 뒤에 지우기
+            //1초뒤에 지우기
             Destroy(go, 1);
 
             //미사일 삭제

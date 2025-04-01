@@ -11,10 +11,9 @@ public class Boss : MonoBehaviour
     public Transform pos1;
     public Transform pos2;
 
-
     void Start()
     {
-        Invoke("Hide", 2); //1ÃÊ µÚ¿¡ º¸½º ¿ö´× ²ô±â
+        Invoke("Hide", 2); //1ÃÊµÚ¿¡ º¸½º¿ö´× ²¨Áà
         StartCoroutine(BossMissle());
         StartCoroutine(CircleFire());
 
@@ -36,9 +35,6 @@ public class Boss : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
     }
-
-
-
 
     //sin      0  -> 1
     //°¢µµ     0  ->90
@@ -85,13 +81,7 @@ public class Boss : MonoBehaviour
             yield return new WaitForSeconds(attackRate);
 
         }
-
-
-
-
     }
-
-
 
     private void Update()
     {
@@ -103,9 +93,4 @@ public class Boss : MonoBehaviour
 
         transform.Translate(flag * speed * Time.deltaTime, 0, 0);
     }
-
-
-
-
-
 }

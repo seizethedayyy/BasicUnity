@@ -8,10 +8,12 @@ public class MBullet : MonoBehaviour
 
     }
 
+
     void Update()
     {
         transform.Translate(Vector3.down * Speed * Time.deltaTime);
     }
+
 
     private void OnBecameInvisible()
     {
@@ -23,7 +25,10 @@ public class MBullet : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //미사일지우기
+            //플레이어 지우기
+
+
+            //미사일 지우기
             Destroy(gameObject);
         }
     }

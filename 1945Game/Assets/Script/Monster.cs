@@ -15,7 +15,7 @@ public class Monster : MonoBehaviour
 
     void Start()
     {
-        //한번함수호출
+        //한 번 함수 호출
         Invoke("CreateBullet", Delay);
     }
 
@@ -29,6 +29,12 @@ public class Monster : MonoBehaviour
     }
 
 
+
+
+
+
+
+
     void Update()
     {
         //아래 방향으로 움직여라
@@ -37,8 +43,8 @@ public class Monster : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        //Destroy(gameObject);
-        PoolManager.Instance.Return(gameObject);
+        Destroy(gameObject);
+        // PoolManager.Instance.Return(gameObject);
     }
 
 
@@ -51,8 +57,8 @@ public class Monster : MonoBehaviour
         if (HP <= 0)
         {
             ItemDrop();
-            //Destroy(gameObject);
-            PoolManager.Instance.Return(gameObject);
+            Destroy(gameObject);
+            //PoolManager.Instance.Return(gameObject);
         }
 
 
