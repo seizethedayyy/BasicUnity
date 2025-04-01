@@ -6,7 +6,7 @@ public class EnemyMissile : MonoBehaviour
     public float lifeTime = 3f; //미사일 생존 시간
     public int damage = 10;     //미사일 데미지
     private Vector2 direction;  //미사일 이동 방향
-
+   
 
     void Start()
     {
@@ -28,21 +28,21 @@ public class EnemyMissile : MonoBehaviour
     void Update()
     {
         float timeScale = TimeController.Instance.GetTimeScale();
-        transform.Translate(direction * speed * Time.deltaTime * timeScale);
+        transform.Translate(direction * speed * Time.deltaTime* timeScale);
     }
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if(other.CompareTag("Player"))
         {
             //여기에 플레이어 데미지 로직 추가
             Destroy(gameObject);
         }//적과 충돌했을때
-        else if (other.CompareTag("Enemy"))
+        else if(other.CompareTag("Enemy"))
         {
             ShootingEnemy enemy = other.GetComponent<ShootingEnemy>();
-            if (enemy != null)
+            if(enemy != null)
             {
                 enemy.PlayDeathAnimation();
             }
@@ -51,4 +51,7 @@ public class EnemyMissile : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
+
 }
